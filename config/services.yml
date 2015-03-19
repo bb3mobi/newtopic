@@ -1,0 +1,11 @@
+services:
+    bb3mobi.newtopic.listener:
+        class: bb3mobi\newtopic\event\listener
+        arguments:
+            - @template
+            - @auth
+            - @dbal.conn
+            - %core.root_path%
+            - %core.php_ext%
+        tags:
+            - { name: event.listener }
