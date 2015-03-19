@@ -1,0 +1,26 @@
+{
+    "name": "bb3mobi/newtopic",
+    "type": "phpbb-extension",
+    "description": "Post new topic, button in forum index.",
+    "homepage": "http://phpbbguru.net",
+    "keywords": ["new", "topic", "index", "post", "forum", "submit"],
+    "version": "1.0.0",
+    "time": "2015-03-19",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Anvar",
+            "homepage": "http://bb3.mobi",
+            "role": "Developer Extension"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "extra": {
+        "display-name": "Post new topic",
+        "soft-require": {
+        "phpbb/phpbb": "3.1.*@dev"
+        }
+    }
+}
