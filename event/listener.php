@@ -1,4 +1,5 @@
 <?php
+
 /**
 *
 * @package: Post new topic, button in forum index
@@ -65,7 +66,8 @@ class listener implements EventSubscriberInterface
 			{
 				// Fetching topics of public forums
 				$sql = 'SELECT forum_id, forum_name, forum_type FROM ' . FORUMS_TABLE . "
-				WHERE " . $this->db->sql_in_set('forum_id', $forum_ary);
+					WHERE " . $this->db->sql_in_set('forum_id', $forum_ary) . "
+						AND forum_type != " . FORUM_LINK;
 				$result = $this->db->sql_query($sql);
 				$forumrow = $this->db->sql_fetchrowset($result);
 				$this->db->sql_freeresult($result);
@@ -74,6 +76,8 @@ class listener implements EventSubscriberInterface
 				foreach ($forumrow as $row)
 				{
 					$s_forum_options .= '<option value="' . $row['forum_id'] . '"' . (($row['forum_id'] == $forum_id) ? ' selected="selected"' : '') . '' . (($row['forum_type'] == FORUM_CAT) ? ' disabled="disabled" class="disabled-option"' : '') . '>' . (($row['forum_type'] != FORUM_CAT) ? '&nbsp;&nbsp;' : '') . $row['forum_name'] . '</option>';
+
+					$forum_id = ($row['forum_type'] == FORUM_POST) ? $row['forum_id'] : '';
 				}
 				$s_forum_options .= '</select>';
 
