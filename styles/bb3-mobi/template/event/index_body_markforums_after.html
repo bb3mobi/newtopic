@@ -1,3 +1,3 @@
-<!-- IF not S_IS_BOT and S_USER_LOGGED_IN and U_POST_NEW_TOPIC_INDEX -->
-<a href="{U_POST_NEW_TOPIC_INDEX}" class="button">{L_BUTTON_NEW_TOPIC}</a>
+<!-- IF not S_IS_BOT and S_USER_LOGGED_IN and S_NEWTOPIC_ENABLE -->
+<a href="{U_POST_NEW_TOPIC_INDEX}" class="button"><!-- IF L_NEWTOPIC_BUTTON -->{L_NEWTOPIC_BUTTON}<!-- ELSE -->{L_BUTTON_NEW_TOPIC}<!-- ENDIF --></a>
 <!-- ENDIF -->

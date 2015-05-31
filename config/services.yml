@@ -2,6 +2,8 @@ services:
     bb3mobi.newtopic.listener:
         class: bb3mobi\newtopic\event\listener
         arguments:
+            - @config
+            - @request
             - @template
             - @auth
             - @dbal.conn
@@ -9,3 +11,4 @@ services:
             - %core.php_ext%
         tags:
             - { name: event.listener }
+ 

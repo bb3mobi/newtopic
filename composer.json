@@ -4,7 +4,7 @@
     "description": "Post new topic, button in forum index.",
     "homepage": "http://phpbbguru.net",
     "keywords": ["new", "topic", "index", "post", "forum", "submit"],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "time": "2015-03-19",
     "license": "GPL-2.0",
     "authors": [
