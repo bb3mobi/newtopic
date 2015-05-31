@@ -72,7 +72,7 @@ class listener implements EventSubscriberInterface
 				$forumrow = $this->db->sql_fetchrowset($result);
 				$this->db->sql_freeresult($result);
 
-				$s_forum_options = '<select id="f" name="f">';
+				$s_forum_options = '<select id="f" name="f" onchange="this.form.submit();">';
 				foreach ($forumrow as $row)
 				{
 					$s_forum_options .= '<option value="' . $row['forum_id'] . '"' . (($row['forum_id'] == $forum_id) ? ' selected="selected"' : '') . '' . (($row['forum_type'] == FORUM_CAT) ? ' disabled="disabled" class="disabled-option"' : '') . '>' . (($row['forum_type'] != FORUM_CAT) ? '&nbsp;&nbsp;' : '') . $row['forum_name'] . '</option>';
